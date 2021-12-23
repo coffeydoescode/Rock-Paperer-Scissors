@@ -25,7 +25,7 @@ function playRound(playerSelection, computerSelection) {
     gameResult = "You Lose!";
   else if (playerSelection === "Rock" && computerSelection === "Rock")
     gameResult = "You tied, that's lame!";
-  // else gameResult = "You haven't defined that outcome!";
+  else gameResult = "You haven't defined that outcome!";
   {
     return gameResult;
   }
