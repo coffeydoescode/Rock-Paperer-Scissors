@@ -1,49 +1,54 @@
+// let choice;
+// let result;
 function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
+  return (choice = Math.floor(Math.random() * max));
 }
-// This code returns a random number between 0 and 2
-let choice = getRandomInt(3);
+// getRandomInt(3);
+// console.log(getRandomInt(3));
 // console.log(choice);
-let result;
-if (choice === 0) result = "rock";
-else if (choice === 1) result = "paper";
-else result = "scissors";
-// This code takes that number and assigns the variable result a value of rock, paper,
-// or scissors based on the random number
-let resultCleaned = result.toLowerCase();
-// console.log(resultCleaned);
+// This code returns a random number between 0 and 2
+// let choice = getRandomInt(3);
 
-function computerPlay() {
-  return resultCleaned;
-}
-// This code defines the function computerPlay and returns the variable result, so that it returns rock, paper, or scissors
-const computerSelection = computerPlay();
+// if (choice === 0) result = "rock";
+// else if (choice === 1) result = "paper";
+// else result = "scissors";
+// // This code takes that number and assigns the variable result a value of rock, paper,
+// // or scissors based on the random number
+
+// const computerSelection = computerPlay();
 // This code defines the variable computerSelection as the computerPlay function
+function assign(choice) {
+  if (choice === 0) result = "rock";
+  else if (choice === 1) result = "paper";
+  else result = "scissors";
+  return result;
+}
 
-// let playerSelectionUnclean = window.prompt(
-//   "Chooose Your Weapon! Rock, Paper, or Scissors"
-// );
-let playerSelection;
+// assign(choice);
+// console.log(result);
+
+function letComputerChoose() {
+  getRandomInt(3);
+  // console.log(choice);
+  assign(choice);
+  // console.log(result);
+  return result;
+}
 
 function letPlayerChoose() {
   return (playerSelection = window.prompt(
     "Chooose Your Weapon! Rock, Paper, or Scissors"
   ));
-}
-// computerPlay();
-// console.log(computerSelection);
+} // This variable prompts the user to input a choice of Rock, Paper, or Scissors
+
 // letPlayerChoose();
 // console.log(playerSelection);
-// This variable prompts the user to input a choice of Rock, Paper, or Scissors
-
-// let playerSelection = playerSelectionUnclean.toLowerCase();
 
 // console.log(playerSelection);
 // let playerSelection = playerSelectionUnclean.toLowerCase();
 // This code takes a user input and and assigns the value to playerSelection (the actual prompt for user input still needs to be added)
 
 function playRound(playerSelection, computerSelection) {
-  // let gameResult = playRound;
   if (playerSelection === "rock" && computerSelection === "scissors")
     gameResult = "You Win!";
   else if (playerSelection === "rock" && computerSelection === "paper")
@@ -72,21 +77,25 @@ function playRound(playerSelection, computerSelection) {
 // This code plays the round and declares the winner
 
 function game() {
-  playRound(letPlayerChoose(), computerSelection);
+  playRound(letPlayerChoose(), letComputerChoose());
   console.log(playerSelection);
-  console.log(computerSelection);
+  console.log(result);
   console.log(gameResult);
-  playRound(letPlayerChoose(), computerSelection);
+  playRound(letPlayerChoose(), letComputerChoose());
   console.log(playerSelection);
-  console.log(computerSelection);
+  console.log(result);
   console.log(gameResult);
-  playRound(letPlayerChoose(), computerSelection);
+  playRound(letPlayerChoose(), letComputerChoose());
   console.log(playerSelection);
-  console.log(computerSelection);
+  console.log(result);
   console.log(gameResult);
-  playRound(letPlayerChoose(), computerSelection);
+  playRound(letPlayerChoose(), letComputerChoose());
   console.log(playerSelection);
-  console.log(computerSelection);
+  console.log(result);
+  console.log(gameResult);
+  playRound(letPlayerChoose(), letComputerChoose());
+  console.log(playerSelection);
+  console.log(result);
   console.log(gameResult);
 }
 game();
