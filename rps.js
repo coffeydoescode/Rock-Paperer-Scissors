@@ -7,8 +7,8 @@ function assign() {
   else if (choice === 1) result = "paper";
   else result = "scissors";
   return result;
-} // // This function takes that number and assigns the variable result a value of rock, paper,
-// // or scissors based on the random number
+} /* This function takes that number and assigns the variable result a value of rock, paper,
+or scissors based on the random number */
 
 function letComputerChoose() {
   getRandomInt(3);
@@ -17,10 +17,6 @@ function letComputerChoose() {
   // console.log(result);
   computerSelection = result;
 } // This function gets a choice of rock, paper or scissors from the computer
-
-// TEST
-// letComputerChoose();
-// console.log(computerSelection);
 
 function letPlayerChoose() {
   playerSelectionOld = window.prompt(
@@ -39,15 +35,6 @@ function getPlayerChoice() {
   makeLower();
   return playerSelection;
 } // This fucntion takes user input and makes it lower case
-
-// letPlayerChoose();
-// console.log(playerSelectionOld);
-
-// makeLower();
-// console.log(playerSelection);
-
-// getPlayerChoice();
-// console.log(playerSelection);
 
 function playRound() {
   if (playerSelection === "rock" && computerSelection === "scissors")
@@ -69,55 +56,56 @@ function playRound() {
   else if (playerSelection === "scissors" && computerSelection === "scissors")
     gameResult = "You tied, that's lame!";
   else gameResult = "Check your spelling!";
-
+  setPlayerScore();
   return gameResult;
-}
-
-function testRound() {
-  if (playerSelection === "rock" && computerSelection === "rock")
-    result = "Cash Money! $$$";
-  else result = "FAIL";
-  return result;
-}
-// testRound(getPlayerChoice(), letComputerChoose());
-// console.log(result);
-// console.log(playerSelection);
-// console.log(computerSelection);
-
-// TEST
-// playRound(getPlayerChoice(), letComputerChoose());
-// console.log(playerSelection);
-// console.log(computerSelection);
-// console.log(gameResult);
-
-// This code plays the round and declares the winner
+} // This code plays the round and declares the winner
 
 function game() {
   playRound(getPlayerChoice(), letComputerChoose());
-  console.log(playerSelection);
-  console.log(computerSelection);
+  // console.log(playerSelection);
+  // console.log(computerSelection);
   console.log(gameResult);
   playRound(getPlayerChoice(), letComputerChoose());
-  console.log(playerSelection);
-  console.log(computerSelection);
+  // console.log(playerSelection);
+  // console.log(computerSelection);
   console.log(gameResult);
   playRound(getPlayerChoice(), letComputerChoose());
-  console.log(playerSelection);
-  console.log(computerSelection);
+  // console.log(playerSelection);
+  // console.log(computerSelection);
   console.log(gameResult);
   playRound(getPlayerChoice(), letComputerChoose());
-  console.log(playerSelection);
-  console.log(computerSelection);
+  // console.log(playerSelection);
+  // console.log(computerSelection);
   console.log(gameResult);
   playRound(getPlayerChoice(), letComputerChoose());
-  console.log(playerSelection);
-  console.log(computerSelection);
+  // console.log(playerSelection);
+  // console.log(computerSelection);
   console.log(gameResult);
-}
-game();
-// getPlayerChoice();
-// console.log(playerSelection);
+} // This function plays 5 rounds
 
-// console.log(playerSelection);
-// console.log(computerSelection);
+// game();
+
+function setPlayerScore() {
+  if ((gameResult = "You Win!"));
+  ++playerScore;
+  console.log(gameResult);
+  console.log("Your Score is ", playerScore);
+}
+
+// setPlayerScore((gameResult = "You Win!"), (playerScore = 0));
+
+function testGame() {
+  let playerScore = 0;
+  playRound((playerSelection = "rock"), (computerSelection = "scissors"));
+  playRound((playerSelection = "rock"), (computerSelection = "scissors"));
+  playRound((playerSelection = "rock"), (computerSelection = "scissors"));
+  playRound((playerSelection = "rock"), (computerSelection = "scissors"));
+  playRound((playerSelection = "rock"), (computerSelection = "scissors"));
+  // setPlayerScore(gameResult, (playerScore = 0));
+}
+// let playerScore = 0;
+// testGame((playerScore = 0));
+
+// setPlayerScore((gameResult = "You Win!"), (playerScore = 99));
 // console.log(gameResult);
+// console.log(playerScore);
