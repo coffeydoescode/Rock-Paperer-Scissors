@@ -20,15 +20,14 @@ function letComputerChoose() {
 
 function letPlayerChoose() {
   playerSelectionOld = window.prompt(
-    "Chooose Your Weapon! Rock, Paper, or Scissors",
-    "ROCK"
+    "Chooose Your Weapon! Rock, Paper, or Scissors"
   );
   return playerSelectionOld;
 } // This function prompts the user to input a choice of rock, paper, or scissors
 
 function makeLower() {
   return (playerSelection = playerSelectionOld.toLowerCase());
-} // This function takes the variable playerSelectionDirty and makes the string lower case
+} // This function takes the variable playerSelectionOld and makes the string lower case
 
 function getPlayerChoice() {
   letPlayerChoose();
@@ -46,18 +45,21 @@ function getCompScore(roundResult) {
   if (roundResult === "You Lose!") ++compScore;
   console.log("Computer Score is ", compScore);
   return compScore;
-}
+} // This function gets the computers score based on the round result
+
 function getScore() {
   getPlayerScore(roundResult);
   getCompScore(roundResult);
   console.log("Score ", playerScore, " - ", compScore);
-}
+} // This function compares the player and computers score
+
 function letWinner() {
   if (compScore > playerScore) winner = "Computer takes Victory!";
-  else winner = "You take Victory!";
+  else if (playerScore > compScore) winner = "You take Victory!";
+  else winner = "You tied!";
   console.log(winner);
   //   return winner;
-}
+} // This function declares the winner
 
 function playRound() {
   if (playerSelection === "rock" && computerSelection === "scissors")
@@ -79,52 +81,36 @@ function playRound() {
   else if (playerSelection === "scissors" && computerSelection === "scissors")
     roundResult = "You tied, that's lame!";
   else roundResult = "Check your spelling!";
+  console.log(roundResult);
   return roundResult;
-} // This code plays the round and declares the winner
+} // This function plays the round and declares the winner
 
 function game() {
   playRound(getPlayerChoice(), letComputerChoose());
-  console.log(playerSelection);
-  console.log(computerSelection);
-  console.log(roundResult);
-  getPlayerScore(roundResult);
-  console.log(playerScore);
+  getScore();
+  getPlayerScore();
   playRound(getPlayerChoice(), letComputerChoose());
-  console.log(playerSelection);
-  console.log(computerSelection);
-  console.log(roundResult);
-  getPlayerScore(roundResult);
-  console.log(playerScore);
+  getScore();
   playRound(getPlayerChoice(), letComputerChoose());
-  console.log(playerSelection);
-  console.log(computerSelection);
-  console.log(roundResult);
-  getPlayerScore(roundResult);
-  console.log(playerScore);
+  getScore();
   playRound(getPlayerChoice(), letComputerChoose());
-  console.log(playerSelection);
-  console.log(computerSelection);
-  console.log(roundResult);
-  getPlayerScore(roundResult);
-  console.log(playerScore);
+  getScore();
   playRound(getPlayerChoice(), letComputerChoose());
-  console.log(playerSelection);
-  console.log(computerSelection);
-  console.log(roundResult);
-  getPlayerScore(roundResult);
-  console.log(playerScore);
+  getScore();
   letWinner();
-} // This function plays 5 rounds
+} // This function plays 5 rounds, updates the score, and declares a winner
 
 let winner = null;
-game(((playerScore = 0), (compScore = 0)));
+// This global declaration is neccessary for game to function
 
-// let playerScore = 0;
+game(((playerScore = 0), (compScore = 0)));
+// playerScore and compScore must be defined for game to function
+
 function testGame() {
-  playRound((playerSelection = "rock"), (computerSelection = "scissors"));
+  playRound((playerSelection = "rock"), (computerSelection = "rock"));
   console.log(roundResult);
   getScore();
-  playRound((playerSelection = "rock"), (computerSelection = "scissors"));
+  playRound((playerSelection = "rock"), (computerSelection = "rock"));
   getScore();
   playRound((playerSelection = "paper"), (computerSelection = "scissors"));
   console.log(roundResult);
@@ -137,5 +123,6 @@ function testGame() {
   getScore();
   letWinner();
 }
-// let winner = null;
+
 // testGame((playerScore = 0), (compScore = 0));
+// This was a test to ensure all functions were working
