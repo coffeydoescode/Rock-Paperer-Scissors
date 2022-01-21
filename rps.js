@@ -36,76 +36,106 @@ function getPlayerChoice() {
   return playerSelection;
 } // This fucntion takes user input and makes it lower case
 
+function getPlayerScore(roundResult) {
+  if (roundResult === "You Win!") ++playerScore;
+  console.log("Your Score is ", playerScore);
+  return playerScore;
+} // This function gets the players score based on the round result
+
+function getCompScore(roundResult) {
+  if (roundResult === "You Lose!") ++compScore;
+  console.log("Computer Score is ", compScore);
+  return compScore;
+}
+function getScore() {
+  getPlayerScore(roundResult);
+  getCompScore(roundResult);
+  console.log("Score ", playerScore, " - ", compScore);
+}
+function letWinner() {
+  if (compScore > playerScore) winner = "Computer takes Victory!";
+  else winner = "You take Victory!";
+  console.log(winner);
+  //   return winner;
+}
+
 function playRound() {
   if (playerSelection === "rock" && computerSelection === "scissors")
-    gameResult = "You Win!";
+    roundResult = "You Win!";
   else if (playerSelection === "rock" && computerSelection === "paper")
-    gameResult = "You Lose!";
+    roundResult = "You Lose!";
   else if (playerSelection === "rock" && computerSelection === "rock")
-    gameResult = "You tied, that's lame!";
+    roundResult = "You tied, that's lame!";
   else if (playerSelection === "paper" && computerSelection === "paper")
-    gameResult = "You tied, that's lame!";
+    roundResult = "You tied, that's lame!";
   else if (playerSelection === "paper" && computerSelection === "scissors")
-    gameResult = "You Lose!";
+    roundResult = "You Lose!";
   else if (playerSelection === "paper" && computerSelection === "rock")
-    gameResult = "You Win!";
+    roundResult = "You Win!";
   else if (playerSelection === "scissors" && computerSelection === "paper")
-    gameResult = "You Win";
+    roundResult = "You Win";
   else if (playerSelection === "scissors" && computerSelection === "rock")
-    gameResult = "You Lose!";
+    roundResult = "You Lose!";
   else if (playerSelection === "scissors" && computerSelection === "scissors")
-    gameResult = "You tied, that's lame!";
-  else gameResult = "Check your spelling!";
-  setPlayerScore();
-  return gameResult;
+    roundResult = "You tied, that's lame!";
+  else roundResult = "Check your spelling!";
+  return roundResult;
 } // This code plays the round and declares the winner
 
 function game() {
   playRound(getPlayerChoice(), letComputerChoose());
-  // console.log(playerSelection);
-  // console.log(computerSelection);
-  console.log(gameResult);
+  console.log(playerSelection);
+  console.log(computerSelection);
+  console.log(roundResult);
+  getPlayerScore(roundResult);
+  console.log(playerScore);
   playRound(getPlayerChoice(), letComputerChoose());
-  // console.log(playerSelection);
-  // console.log(computerSelection);
-  console.log(gameResult);
+  console.log(playerSelection);
+  console.log(computerSelection);
+  console.log(roundResult);
+  getPlayerScore(roundResult);
+  console.log(playerScore);
   playRound(getPlayerChoice(), letComputerChoose());
-  // console.log(playerSelection);
-  // console.log(computerSelection);
-  console.log(gameResult);
+  console.log(playerSelection);
+  console.log(computerSelection);
+  console.log(roundResult);
+  getPlayerScore(roundResult);
+  console.log(playerScore);
   playRound(getPlayerChoice(), letComputerChoose());
-  // console.log(playerSelection);
-  // console.log(computerSelection);
-  console.log(gameResult);
+  console.log(playerSelection);
+  console.log(computerSelection);
+  console.log(roundResult);
+  getPlayerScore(roundResult);
+  console.log(playerScore);
   playRound(getPlayerChoice(), letComputerChoose());
-  // console.log(playerSelection);
-  // console.log(computerSelection);
-  console.log(gameResult);
+  console.log(playerSelection);
+  console.log(computerSelection);
+  console.log(roundResult);
+  getPlayerScore(roundResult);
+  console.log(playerScore);
+  letWinner();
 } // This function plays 5 rounds
 
-// game();
+let winner = null;
+game(((playerScore = 0), (compScore = 0)));
 
-function setPlayerScore() {
-  if ((gameResult = "You Win!"));
-  ++playerScore;
-  console.log(gameResult);
-  console.log("Your Score is ", playerScore);
-}
-
-// setPlayerScore((gameResult = "You Win!"), (playerScore = 0));
-
-function testGame() {
-  let playerScore = 0;
-  playRound((playerSelection = "rock"), (computerSelection = "scissors"));
-  playRound((playerSelection = "rock"), (computerSelection = "scissors"));
-  playRound((playerSelection = "rock"), (computerSelection = "scissors"));
-  playRound((playerSelection = "rock"), (computerSelection = "scissors"));
-  playRound((playerSelection = "rock"), (computerSelection = "scissors"));
-  // setPlayerScore(gameResult, (playerScore = 0));
-}
 // let playerScore = 0;
-// testGame((playerScore = 0));
-
-// setPlayerScore((gameResult = "You Win!"), (playerScore = 99));
-// console.log(gameResult);
-// console.log(playerScore);
+function testGame() {
+  playRound((playerSelection = "rock"), (computerSelection = "scissors"));
+  console.log(roundResult);
+  getScore();
+  playRound((playerSelection = "rock"), (computerSelection = "scissors"));
+  getScore();
+  playRound((playerSelection = "paper"), (computerSelection = "scissors"));
+  console.log(roundResult);
+  getScore();
+  playRound((playerSelection = "paper"), (computerSelection = "scissors"));
+  console.log(roundResult);
+  getScore();
+  playRound((playerSelection = "paper"), (computerSelection = "scissors"));
+  console.log(roundResult);
+  getScore();
+  letWinner();
+}
+// let winner = null;
+// testGame((playerScore = 0), (compScore = 0));
