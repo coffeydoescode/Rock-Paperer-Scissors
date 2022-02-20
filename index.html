@@ -4,10 +4,62 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="rps.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&family=Yellowtail&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="rps.js" defer></script>
+
     <title>RPS</title>
   </head>
   <body>
-    <h1>Rock Paper Scissors!</h1>
+    <header>
+      <h1 class="main-title">Rock Paper Scissors</h1>
+    </header>
+
+    <div class="section-one">
+      <div class="results">
+        <h2>Score</h2>
+        <div class="scorebox">
+          <div class="playerScore">
+            <h3>Player</h3>
+            <p>X</p>
+          </div>
+          <div class="compScore">
+            <h3>Computer</h3>
+            <p>X</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="scoring-player">
+        <h2>BLANK Scored!</h2>
+      </div>
+    </div>
+
+    <div class="section-two">
+      <div class="choices">
+        <div class="player-choice">
+          <h2>You Chose</h2>
+        </div>
+        <div class="comp-choice">
+          <h2>Computer Chose</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="section3">
+      <div class="btnBox">
+        <div class="rock"></div>
+        <div class="paper"></div>
+        <div class="scissors"></div>
+      </div>
+    </div>
+    <footer>
+      <span>CoffeyDoesCode</span>
+    </footer>
   </body>
 </html>

@@ -1,0 +1,243 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Colors Being Used
+Black #2D2D2A
+Yellow FFCA3A
+Blue
+ */
+
+body {
+  background-color: #1982c4;
+  display: flex;
+  flex-direction: column;
+  color: #2d2d2a;
+}
+
+h2 {
+  font-family: "Oswald", sans-serif, regular;
+  font-size: 30px;
+}
+h3 {
+  font-family: "Oswald", sans-serif, regular;
+  font-size: 22px;
+}
+header {
+  background-color: #ffca3a;
+  height: 160px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: solid 4px #2d2d2a;
+  border-top: solid 4px #2d2d2a;
+}
+.section-one {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.choices {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  justify-content: space-evenly;
+}
+.main-title {
+  color: #2d2d2a;
+  font-size: 60px;
+  font-family: "Yellowtail", cursive;
+}
+.results {
+  height: 140px;
+  width: 260px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.results h2 {
+  padding: 5px 0 5px 0;
+  font-family: "Oswald", sans-serif, regular;
+}
+.results h3 {
+  padding: 0 10px 0 10px;
+  text-align: center;
+}
+.scoring-player {
+  height: 45px;
+  width: auto;
+  border: 4px solid #2d2d2a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Oswald", sans-serif, regular;
+}
+.scoring-player h2 {
+  padding: 0 10px 0 10px;
+}
+
+.results p {
+  color: #2d2d2a;
+  font-size: 18px;
+  font-family: "Oswald", sans-serif, regular;
+}
+.scorebox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.compScore,
+.playerScore {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.scorebox p {
+  padding-top: 6px;
+  font-size: 60px;
+}
+.btnBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.rock,
+.paper,
+.scissors {
+  background-color: #ffca3a;
+  height: 160px;
+  width: 160px;
+  border: 4px solid #2d2d2a;
+  margin: 0 20px 0 20px;
+}
