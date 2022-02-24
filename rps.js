@@ -42,12 +42,14 @@ function getPlayerChoice() {
 function getPlayerScore(roundResult) {
   if (roundResult === "You Win!") playerScore++;
   console.log("Your Score is ", playerScore);
+  roundWinner.textContent = "You Scored!";
   return playerScore;
 } // This function gets the players score based on the round result
 
 function getCompScore(roundResult) {
   if (roundResult === "You Lose!") compScore++;
   console.log("Computer Score is ", compScore);
+  roundWinner.textContent = "Computer Scored!";
   return compScore;
 } // This function gets the computers score based on the round result
 
@@ -55,7 +57,11 @@ function getScore() {
   getPlayerScore(roundResult);
   getCompScore(roundResult);
   console.log("Score ", playerScore, " - ", compScore);
-  score.textContent = `${playerScore} - ${compScore}`;
+  if (roundResult === "You tied, that's lame!") {
+    roundWinner.textContent = "Tie!";
+  }
+  pScore.textContent = playerScore;
+  cScore.textContent = compScore;
 } // This function compares the player and computers score
 
 function letWinner() {
@@ -135,4 +141,6 @@ scissorsBtn.addEventListener("click", (e) => {
   playScissors(playerScore, compScore);
 });
 
-const score = document.querySelector(".score");
+const pScore = document.querySelector(".p-score");
+const cScore = document.querySelector(".c-score");
+const roundWinner = document.querySelector(".scoring-player h2");
