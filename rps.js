@@ -22,34 +22,19 @@ function letComputerChoose() {
   computerSelection = result;
 } // This function gets a choice of rock, paper or scissors from the computer
 
-function letPlayerChoose() {
-  playerSelectionOld = window.prompt(
-    "Chooose Your Weapon! Rock, Paper, or Scissors"
-  );
-  return playerSelectionOld;
-} // This function prompts the user to input a choice of rock, paper, or scissors
-
-function makeLower() {
-  return (playerSelection = playerSelectionOld.toLowerCase());
-} // This function takes the variable playerSelectionOld and makes the string lower case
-
-function getPlayerChoice() {
-  letPlayerChoose();
-  makeLower();
-  return playerSelection;
-} // This fucntion takes user input and makes it lower case
-
 function getPlayerScore(roundResult) {
   if (roundResult === "You Win!") playerScore++;
   console.log("Your Score is ", playerScore);
-  roundWinner.textContent = "You Scored!";
+  // roundWinner.textContent = "You Scored!";
+  // scoreBox.classList.toggle("win");
   return playerScore;
 } // This function gets the players score based on the round result
 
 function getCompScore(roundResult) {
   if (roundResult === "You Lose!") compScore++;
   console.log("Computer Score is ", compScore);
-  roundWinner.textContent = "Computer Scored!";
+  // scoreBox.classList.toggle("lose");
+  // roundWinner.textContent = "Computer Scored!";
   return compScore;
 } // This function gets the computers score based on the round result
 
@@ -57,22 +42,46 @@ function getScore() {
   getPlayerScore(roundResult);
   getCompScore(roundResult);
   console.log("Score ", playerScore, " - ", compScore);
-  if (roundResult === "You tied, that's lame!") {
-    roundWinner.textContent = "Tie!";
-  }
+
+  // if (roundResult === "You tied, that's lame!") {
+  //   roundWinner.textContent = "Tie!";
+  //   scoreBox.classList.toggle("tie");
+  // } else if (roundResult === "You Win!") {
+  //   scoreBox.classList.toggle("win");
+  //   roundWinner.textContent = "You Scored";
+  // } else scoreBox.classList.toggle("lose");
+  // roundWinner.textContent = "Computer Scored";
+
   pScore.textContent = playerScore;
   cScore.textContent = compScore;
 } // This function compares the player and computers score
+
+function win(roundResult) {
+  if (roundResult === "You Win!") {
+    roundWinner.textContent = "You Scored!";
+    scoreBox.style.borderColor = "#ffca3a";
+  } else if (roundResult === "You Lose!") {
+    roundWinner.textContent = "Computer Scored";
+    scoreBox.style.borderColor = "#c14953";
+  } else if (roundResult === "Tie!") {
+    roundWinner.textContent = "Tie!";
+    scoreBox.style.borderColor = "white";
+  }
+}
 
 function letWinner() {
   if (compScore === 5) {
     winner = "Computer takes Victory!";
     compScore = 0;
     playerScore = 0;
+    pScore.textContent = playerScore;
+    cScore.textContent = compScore;
   } else if (playerScore === 5) {
     winner = "You take Victory!";
     playerScore = 0;
     compScore = 0;
+    pScore.textContent = playerScore;
+    cScore.textContent = compScore;
   }
   console.log(winner);
   //   return winner;
@@ -84,9 +93,9 @@ function playRound() {
   else if (playerSelection === "rock" && computerSelection === "paper")
     roundResult = "You Lose!";
   else if (playerSelection === "rock" && computerSelection === "rock")
-    roundResult = "You tied, that's lame!";
+    roundResult = "Tie!";
   else if (playerSelection === "paper" && computerSelection === "paper")
-    roundResult = "You tied, that's lame!";
+    roundResult = "Tie!";
   else if (playerSelection === "paper" && computerSelection === "scissors")
     roundResult = "You Lose!";
   else if (playerSelection === "paper" && computerSelection === "rock")
@@ -96,7 +105,7 @@ function playRound() {
   else if (playerSelection === "scissors" && computerSelection === "rock")
     roundResult = "You Lose!";
   else if (playerSelection === "scissors" && computerSelection === "scissors")
-    roundResult = "You tied, that's lame!";
+    roundResult = "Tie";
   else roundResult = "Check your spelling!";
   console.log(roundResult);
   if ((winner = "Computer takes Vicroty" || "You take Victory!")) {
@@ -108,39 +117,71 @@ function playRound() {
 function playRock(playerScore, compScore) {
   playRound((playerSelection = "rock"), letComputerChoose());
   getScore();
+  win(roundResult);
   letWinner();
 }
 
 function playPaper(playerScore, compScore) {
   playRound((playerSelection = "paper"), letComputerChoose());
   getScore();
+  win(roundResult);
   letWinner();
 }
 
 function playScissors(playerScore, compScore) {
   playRound((playerSelection = "scissors"), letComputerChoose());
   getScore();
+  win(roundResult);
   letWinner();
 }
 
 const rockBtn = document.querySelector(".rock");
 
 rockBtn.addEventListener("click", (e) => {
+  rockImg();
   playRock(playerScore, compScore);
 });
 
 const paperBtn = document.querySelector(".paper");
 
 paperBtn.addEventListener("click", (e) => {
+  paperImg();
   playPaper(playerScore, compScore);
 });
 
 const scissorsBtn = document.querySelector(".scissors");
 
 scissorsBtn.addEventListener("click", (e) => {
+  scissorsImg();
   playScissors(playerScore, compScore);
 });
 
 const pScore = document.querySelector(".p-score");
 const cScore = document.querySelector(".c-score");
 const roundWinner = document.querySelector(".scoring-player h2");
+const scoreBox = document.querySelector(".scoring-player");
+const playerChoice = document.querySelector(".player-choice");
+const compChoice = document.querySelector(".comp-choice");
+
+function rockImg() {
+  const rockChoice = document.createElement("img");
+  rockChoice.src = "img/rock.png";
+  rockChoice.style.height = "auto";
+  rockChoice.style.width = "90px";
+  document.querySelector(".player-choice").appendChild(rockChoice);
+}
+
+function paperImg() {
+  const paperChoice = document.createElement("img");
+  paperChoice.src = "img/paper.png";
+  paperChoice.style.height = "auto";
+  paperChoice.style.width = "90px";
+  document.querySelector(".player-choice").appendChild(paperChoice);
+}
+function scissorsImg() {
+  const scissorsChoice = document.createElement("img");
+  scissorsChoice.src = "img/scissors.png";
+  scissorsChoice.style.height = "auto";
+  scissorsChoice.style.width = "90px";
+  document.querySelector(".player-choice").appendChild(scissorsChoice);
+}
