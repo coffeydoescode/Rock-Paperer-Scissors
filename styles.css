@@ -297,3 +297,17 @@ footer {
   justify-content: center;
   align-items: center;
 }
+
+.playerRockChoice,
+.playerPaperChoice,
+.playerScissorsChoice,
+.compRockChoice,
+.compPaperChoice,
+.compScissorsChoice {
+  height: auto;
+  width: 90px;
+  display: none;
+}
+.on {
+  display: block;
+}

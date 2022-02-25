@@ -108,6 +108,7 @@ function playRound() {
     roundResult = "Tie";
   else roundResult = "Check your spelling!";
   console.log(roundResult);
+  console.log("computerSelection = ", computerSelection);
   if ((winner = "Computer takes Vicroty" || "You take Victory!")) {
     winner = "";
   }
@@ -138,22 +139,22 @@ function playScissors(playerScore, compScore) {
 const rockBtn = document.querySelector(".rock");
 
 rockBtn.addEventListener("click", (e) => {
-  rockImg();
   playRock(playerScore, compScore);
+  showChoice(playerSelection, computerSelection);
 });
 
 const paperBtn = document.querySelector(".paper");
 
 paperBtn.addEventListener("click", (e) => {
-  paperImg();
   playPaper(playerScore, compScore);
+  showChoice(playerSelection, computerSelection);
 });
 
 const scissorsBtn = document.querySelector(".scissors");
 
 scissorsBtn.addEventListener("click", (e) => {
-  scissorsImg();
   playScissors(playerScore, compScore);
+  showChoice(playerSelection, computerSelection);
 });
 
 const pScore = document.querySelector(".p-score");
@@ -163,25 +164,39 @@ const scoreBox = document.querySelector(".scoring-player");
 const playerChoice = document.querySelector(".player-choice");
 const compChoice = document.querySelector(".comp-choice");
 
-function rockImg() {
-  const rockChoice = document.createElement("img");
-  rockChoice.src = "img/rock.png";
-  rockChoice.style.height = "auto";
-  rockChoice.style.width = "90px";
-  document.querySelector(".player-choice").appendChild(rockChoice);
-}
+const playerRockChoice = document.querySelector(".playerRockChoice");
+const playerPaperChoice = document.querySelector(".playerPaperChoice");
+const playerScissorsChoice = document.querySelector(".playerScissorsChoice");
 
-function paperImg() {
-  const paperChoice = document.createElement("img");
-  paperChoice.src = "img/paper.png";
-  paperChoice.style.height = "auto";
-  paperChoice.style.width = "90px";
-  document.querySelector(".player-choice").appendChild(paperChoice);
-}
-function scissorsImg() {
-  const scissorsChoice = document.createElement("img");
-  scissorsChoice.src = "img/scissors.png";
-  scissorsChoice.style.height = "auto";
-  scissorsChoice.style.width = "90px";
-  document.querySelector(".player-choice").appendChild(scissorsChoice);
+const compRockChoice = document.querySelector(".compRockChoice");
+const compPaperChoice = document.querySelector(".compPaperChoice");
+const compScissorsChoice = document.querySelector(".compScissorsChoice");
+
+function showChoice(playerSelection, computerSelection) {
+  if (playerSelection === "rock") {
+    playerRockChoice.classList.add("on");
+  } else {
+    playerRockChoice.classList.remove("on");
+  }
+  if (playerSelection === "paper") {
+    playerPaperChoice.classList.add("on");
+  } else {
+    playerPaperChoice.classList.remove("on");
+  }
+  if (playerSelection === "scissors") {
+    playerScissorsChoice.classList.add("on");
+  } else {
+    playerScissorsChoice.classList.remove("on");
+  }
+  if (computerSelection === "rock") {
+    compRockChoice.classList.add("on");
+  } else {
+    compRockChoice.classList.remove("on");
+  }
+  if (computerSelection === "paper") {
+    compPaperChoice.classList.add("on");
+  } else compPaperChoice.classList.remove("on");
+  if (computerSelection === "scissors") {
+    compScissorsChoice.classList.add("on");
+  } else compScissorsChoice.classList.remove("on");
 }
