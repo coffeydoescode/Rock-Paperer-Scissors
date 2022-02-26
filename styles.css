@@ -134,6 +134,7 @@ Yellow FFCA3A
 Blue
  */
 
+/* Page Styling */
 body {
   background-color: #1982c4;
   display: flex;
@@ -141,7 +142,11 @@ body {
   color: #2d2d2a;
   min-height: 100vh;
 }
-
+h1 {
+  color: #2d2d2a;
+  font-size: 60px;
+  font-family: "Yellowtail", cursive;
+}
 h2 {
   font-family: "Oswald", sans-serif, regular;
   font-size: 30px;
@@ -150,6 +155,8 @@ h3 {
   font-family: "Oswald", sans-serif, regular;
   font-size: 22px;
 }
+
+/* Header */
 header {
   background-color: #ffca3a;
   height: 160px;
@@ -160,23 +167,18 @@ header {
   border-bottom: solid 5px #2d2d2a;
   border-top: solid 5px #2d2d2a;
 }
+.main-title {
+  color: #2d2d2a;
+  font-size: 60px;
+  font-family: "Yellowtail", cursive;
+}
+/* Section One */
+
 .section-one {
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding-top: 30px;
-}
-
-.choices {
-  display: flex;
-  margin-bottom: 50px;
-  justify-content: center;
-}
-
-.main-title {
-  color: #2d2d2a;
-  font-size: 60px;
-  font-family: "Yellowtail", cursive;
 }
 .results {
   height: 140px;
@@ -193,6 +195,12 @@ header {
   padding: 0 10px 0 10px;
   text-align: center;
 }
+.results p {
+  color: #2d2d2a;
+  font-size: 18px;
+  font-family: "Oswald", sans-serif, regular;
+}
+
 .scoring-player {
   height: 95px;
   width: 205px;
@@ -205,12 +213,6 @@ header {
 }
 .scoring-player h2 {
   padding: 0 5px 0 5px;
-}
-
-.results p {
-  color: #2d2d2a;
-  font-size: 18px;
-  font-family: "Oswald", sans-serif, regular;
 }
 .scorebox {
   display: flex;
@@ -228,12 +230,7 @@ header {
   padding-top: 6px;
   font-size: 60px;
 }
-.btnBox {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
+/* Section Two */
 
 .player-choice,
 .comp-choice {
@@ -244,6 +241,13 @@ header {
   border-radius: 10px;
   margin: 0 20px 0 20px;
 }
+.player-choice,
+.comp-choice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .choice-box {
   display: flex;
   justify-content: center;
@@ -251,51 +255,10 @@ header {
   align-items: center;
   margin: 0 25px 0 25px;
 }
-.rock,
-.paper,
-.scissors {
-  background-color: #ffca3a;
-  height: 200px;
-  width: 200px;
-  border: 6px solid #2d2d2a;
-  border-radius: 10px;
-  margin: 0 20px 0 20px;
+.choices {
   display: flex;
+  margin-bottom: 50px;
   justify-content: center;
-  align-items: center;
-}
-.sig {
-  font-family: "Oswald", sans-serif, regular;
-  font-weight: 300;
-  margin: 0 0 10px 10px;
-}
-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  flex-grow: 1;
-  max-height: 20px;
-}
-.github-logo {
-  margin-left: 5px;
-  margin-bottom: 10px;
-}
-.sig-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.player-choice {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.comp-choice {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .playerRockChoice,
@@ -310,4 +273,111 @@ footer {
 }
 .on {
   display: block;
+}
+
+/* Section Three */
+
+.rock,
+.paper,
+.scissors {
+  background-color: #ffca3a;
+  height: 200px;
+  width: 200px;
+  border: 6px solid #2d2d2a;
+  border-radius: 10px;
+  margin: 0 20px 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.btnBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Footer */
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-grow: 1;
+  max-height: 20px;
+  align-items: center;
+}
+
+.sig-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 10px 10px;
+
+  /* possible border sytles */
+  /*     
+    border-radius: 50px;
+    border: solid white thin;
+    padding: 5px; */
+}
+.sig {
+  font-family: "Oswald", sans-serif, regular;
+}
+.sig-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.github-logo {
+  margin-left: 5px;
+}
+.credit {
+  margin: 0 10px 30px 0;
+  font-family: "Oswald", sans-serif, regular;
+}
+/* Other Styling Rules */
+
+/* Modal Stylign */
+#modal {
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  width: 300px;
+  font-family: "Oswald", sans-serif, regular;
+  border: 6px solid #2d2d2a;
+  border-radius: 10px;
+  background-color: #f6f8ff;
+}
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container h2,
+.modal-container h3,
+.modal-container p {
+  margin: 5px 0 5px 0;
+}
+.modal-close {
+  align-self: flex-end;
+}
+.modal-btn {
+  margin-top: 12px;
+}
+/* Link Styling */
+
+a {
+  color: #2d2d2a;
+  font-family: "Oswald", sans-serif, regular;
+  text-decoration: none;
+}
+a:visited {
+  color: #ffca3a;
 }

@@ -172,6 +172,7 @@ const compRockChoice = document.querySelector(".compRockChoice");
 const compPaperChoice = document.querySelector(".compPaperChoice");
 const compScissorsChoice = document.querySelector(".compScissorsChoice");
 
+// This function shows the choices of the player and computer
 function showChoice(playerSelection, computerSelection) {
   if (playerSelection === "rock") {
     playerRockChoice.classList.add("on");

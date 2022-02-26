@@ -20,6 +20,8 @@
       <h1 class="main-title">Rock Paper Scissors</h1>
     </header>
 
+    <!-- Section One -->
+
     <div class="section-one">
       <div class="results">
         <h2>Score</h2>
@@ -92,17 +94,61 @@
         </div>
       </div>
     </div>
+
     <footer>
       <div class="sig-container">
-        <p class="sig">CoffeyDoesCode</p>
+        <a
+          class="sig-link"
+          href="https://github.com/coffeydoescode"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h3 class="sig">CoffeyDoesCode</h3>
+
+          <img
+            class="github-logo"
+            src="/img/GitHub-Mark-32px.png"
+            alt="CoffeyDoesCode-github-link"
+            height="20px"
+            width="20px"
+          />
+        </a>
+      </div>
+      <div class="credit">
+        <p>Illustration by</p>
+        <a
+          href="https://icons8.com/illustrations/author/5c07e68d82bcbc0092519bb6"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Icons 8</a
+        >
+        from
+        <a
+          href="https://icons8.com/illustrations"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Ouch!</a
+        >
+      </div>
+    </footer>
+
+    <!-- MODAL (currently set to display none) -->
+
+    <dialog id="modal" style="display: none">
+      <button class="modal-close">
         <img
-          class="github-logo"
-          src="/img/GitHub-Mark-32px.png"
-          alt="github-link"
+          src="img/icons8-close-67.png"
+          alt="close"
           height="20px"
           width="20px"
         />
+      </button>
+      <div class="modal-container">
+        <h1 class="modal-winner">Person Won!</h1>
+        <h3>Score</h3>
+        <h1 class="modal-score">X - X</h1>
+        <button class="modal-btn">Play Again?</button>
       </div>
-    </footer>
+    </dialog>
   </body>
 </html>
