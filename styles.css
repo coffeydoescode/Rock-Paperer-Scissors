@@ -314,12 +314,13 @@ footer {
   justify-content: center;
   align-items: center;
   margin: 0 0 10px 10px;
-
-  /* possible border sytles */
-  /*     
-    border-radius: 50px;
-    border: solid white thin;
-    padding: 5px; */
+  border-radius: 50px;
+  padding: 5px;
+}
+.sig-container:hover {
+  background-color: #146698;
+  /* border-radius: 50px;
+  padding: 5px; */
 }
 .sig {
   font-family: "Oswald", sans-serif, regular;
@@ -339,19 +340,31 @@ footer {
 /* Other Styling Rules */
 
 /* Modal Stylign */
+.modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.5);
+}
 #modal {
   display: flex;
   flex-direction: column;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  /* top: 0;
+  bottom: 0; */
+
   height: 30%;
-  width: 300px;
+  width: 400px;
   font-family: "Oswald", sans-serif, regular;
   border: 6px solid #2d2d2a;
   border-radius: 10px;
-  background-color: #f6f8ff;
+  background-color: #ffca3a;
 }
 .modal-container {
   display: flex;
@@ -367,10 +380,30 @@ footer {
 }
 .modal-close {
   align-self: flex-end;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
+.modal-close img:hover {
+  border-radius: 50%;
+  background-color: #c14953;
+}
+
 .modal-btn {
   margin-top: 12px;
+  font-family: "Yellowtail", cursive;
+  font-size: 18px;
+  color: #2d2d2a;
+  padding: 8px 14px;
+  border-radius: 50px;
+  background-color: #6ab479;
+  border: 2px solid #2d2d2a;
 }
+.modal-btn:hover {
+  background-color: #1982c4;
+  color: white;
+}
+
 /* Link Styling */
 
 a {
@@ -380,4 +413,8 @@ a {
 }
 a:visited {
   color: #ffca3a;
+}
+.credit a:hover {
+  background-color: #146698;
+  border-radius: 10%;
 }

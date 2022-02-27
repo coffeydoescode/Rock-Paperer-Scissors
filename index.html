@@ -133,22 +133,22 @@
     </footer>
 
     <!-- MODAL (currently set to display none) -->
-
-    <dialog id="modal" style="display: none">
-      <button class="modal-close">
-        <img
-          src="img/icons8-close-67.png"
-          alt="close"
-          height="20px"
-          width="20px"
-        />
-      </button>
-      <div class="modal-container">
-        <h1 class="modal-winner">Person Won!</h1>
-        <h3>Score</h3>
-        <h1 class="modal-score">X - X</h1>
-        <button class="modal-btn">Play Again?</button>
-      </div>
-    </dialog>
+    <div class="modal-bg">
+      <dialog id="modal">
+        <button class="modal-close">
+          <img
+            src="img/icons8-close-67.png"
+            alt="close"
+            height="24px"
+            width="24px"
+          />
+        </button>
+        <div class="modal-container">
+          <h1 class="modal-winner">Person Won!</h1>
+          <h1 class="modal-score">0 - 0</h1>
+          <button class="modal-btn">Play Again?</button>
+        </div>
+      </dialog>
+    </div>
   </body>
 </html>
