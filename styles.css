@@ -352,13 +352,12 @@ footer {
   box-sizing: border-box;
   padding: 15px;
   background: rgba(0, 0, 0, 0.5);
+  display: none;
 }
+
 #modal {
   display: flex;
   flex-direction: column;
-  /* top: 0;
-  bottom: 0; */
-
   height: 30%;
   width: 400px;
   font-family: "Oswald", sans-serif, regular;

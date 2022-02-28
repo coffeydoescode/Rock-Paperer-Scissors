@@ -42,16 +42,6 @@ function getScore() {
   getPlayerScore(roundResult);
   getCompScore(roundResult);
   console.log("Score ", playerScore, " - ", compScore);
-
-  // if (roundResult === "You tied, that's lame!") {
-  //   roundWinner.textContent = "Tie!";
-  //   scoreBox.classList.toggle("tie");
-  // } else if (roundResult === "You Win!") {
-  //   scoreBox.classList.toggle("win");
-  //   roundWinner.textContent = "You Scored";
-  // } else scoreBox.classList.toggle("lose");
-  // roundWinner.textContent = "Computer Scored";
-
   pScore.textContent = playerScore;
   cScore.textContent = compScore;
 } // This function compares the player and computers score
@@ -71,20 +61,21 @@ function win(roundResult) {
 
 function letWinner() {
   if (compScore === 5) {
-    winner = "Computer takes Victory!";
-    compScore = 0;
-    playerScore = 0;
+    modalBg.style.display = "flex";
+    winner = "Computer Wins!";
+    modalWinner.textContent = winner;
+    modalScore.textContent = `${compScore} - ${playerScore}`;
     pScore.textContent = playerScore;
     cScore.textContent = compScore;
   } else if (playerScore === 5) {
-    winner = "You take Victory!";
-    playerScore = 0;
-    compScore = 0;
+    modalBg.style.display = "flex";
+    winner = "You Won!";
+    modalWinner.textContent = winner;
+    modalScore.textContent = `${playerScore} - ${compScore}`;
     pScore.textContent = playerScore;
     cScore.textContent = compScore;
   }
   console.log(winner);
-  //   return winner;
 } // This function declares the winner
 
 function playRound() {
@@ -109,7 +100,7 @@ function playRound() {
   else roundResult = "Check your spelling!";
   console.log(roundResult);
   console.log("computerSelection = ", computerSelection);
-  if ((winner = "Computer takes Vicroty" || "You take Victory!")) {
+  if ((winner = "Computer takes Victory" || "You take Victory!")) {
     winner = "";
   }
   return roundResult;
@@ -164,6 +155,7 @@ const scoreBox = document.querySelector(".scoring-player");
 const playerChoice = document.querySelector(".player-choice");
 const compChoice = document.querySelector(".comp-choice");
 
+// Image Selectors for player/comp choice
 const playerRockChoice = document.querySelector(".playerRockChoice");
 const playerPaperChoice = document.querySelector(".playerPaperChoice");
 const playerScissorsChoice = document.querySelector(".playerScissorsChoice");
@@ -171,6 +163,28 @@ const playerScissorsChoice = document.querySelector(".playerScissorsChoice");
 const compRockChoice = document.querySelector(".compRockChoice");
 const compPaperChoice = document.querySelector(".compPaperChoice");
 const compScissorsChoice = document.querySelector(".compScissorsChoice");
+
+// Modal Selectors
+const modalBg = document.querySelector(".modal-bg");
+const modalWinner = document.querySelector(".modal-winner");
+const modalScore = document.querySelector(".modal-score");
+const modalBtn = document.querySelector(".modal-btn");
+const modalCloseBtn = document.querySelector(".modal-close");
+
+// This lets the play again button work
+modalBtn.addEventListener("click", (e) => {
+  compScore = 0;
+  playerScore = 0;
+  pScore.textContent = playerScore;
+  cScore.textContent = compScore;
+  modalBg.style.display = "none";
+  roundWinner.textContent = "";
+  scoreBox.style.borderColor = "#2d2d2a";
+});
+
+modalCloseBtn.addEventListener("click", (e) => {
+  modalBg.style.display = "none";
+});
 
 // This function shows the choices of the player and computer
 function showChoice(playerSelection, computerSelection) {
