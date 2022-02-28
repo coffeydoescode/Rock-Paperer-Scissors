@@ -290,7 +290,17 @@ header {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  will-change: transform;
+  transition: transform 450ms;
 }
+
+.rock:hover,
+.paper:hover,
+.scissors:hover {
+  transition: transform 125ms;
+  transform: translateY(-20px);
+}
+
 .btnBox {
   display: flex;
   flex-direction: row;
@@ -319,8 +329,8 @@ footer {
 }
 .sig-container:hover {
   background-color: #146698;
-  /* border-radius: 50px;
-  padding: 5px; */
+  transition: transform 125ms;
+  transform: translateY(-10px);
 }
 .sig {
   font-family: "Oswald", sans-serif, regular;
