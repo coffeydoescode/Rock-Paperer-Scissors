@@ -255,6 +255,10 @@ header {
   align-items: center;
   margin: 0 25px 0 25px;
 }
+.choice-box h3 {
+  padding-top: 5px;
+}
+
 .choices {
   display: flex;
   margin-bottom: 50px;

@@ -4,7 +4,7 @@ let winner = "";
 
 function getRandomInt(max) {
   return (choice = Math.floor(Math.random() * max));
-} // This function returns a random number between 0 and 2
+} // This function returns a random number
 
 function assign() {
   if (choice === 0) result = "rock";
@@ -16,25 +16,19 @@ or scissors based on the random number */
 
 function letComputerChoose() {
   getRandomInt(3);
-  // console.log(choice);
   assign(choice);
-  // console.log(result);
   computerSelection = result;
 } // This function gets a choice of rock, paper or scissors from the computer
 
 function getPlayerScore(roundResult) {
   if (roundResult === "You Win!") playerScore++;
   console.log("Your Score is ", playerScore);
-  // roundWinner.textContent = "You Scored!";
-  // scoreBox.classList.toggle("win");
   return playerScore;
 } // This function gets the players score based on the round result
 
 function getCompScore(roundResult) {
   if (roundResult === "You Lose!") compScore++;
   console.log("Computer Score is ", compScore);
-  // scoreBox.classList.toggle("lose");
-  // roundWinner.textContent = "Computer Scored!";
   return compScore;
 } // This function gets the computers score based on the round result
 
@@ -97,7 +91,6 @@ function playRound() {
     roundResult = "You Lose!";
   else if (playerSelection === "scissors" && computerSelection === "scissors")
     roundResult = "Tie";
-  else roundResult = "Check your spelling!";
   console.log(roundResult);
   console.log("computerSelection = ", computerSelection);
   if ((winner = "Computer takes Victory" || "You take Victory!")) {
@@ -180,11 +173,33 @@ modalBtn.addEventListener("click", (e) => {
   modalBg.style.display = "none";
   roundWinner.textContent = "";
   scoreBox.style.borderColor = "#2d2d2a";
+  playerRockChoice.classList.remove("on");
+  playerPaperChoice.classList.remove("on");
+  playerScissorsChoice.classList.remove("on");
+  compRockChoice.classList.remove("on");
+  compPaperChoice.classList.remove("on");
+  compScissorsChoice.classList.remove("on");
 });
 
 modalCloseBtn.addEventListener("click", (e) => {
+  gameReset();
   modalBg.style.display = "none";
 });
+
+function gameReset() {
+  playerScore = 0;
+  pScore.textContent = playerScore;
+  compScore = 0;
+  cScore.textContent = compScore;
+  roundWinner.textContent = "Good Game!";
+  scoreBox.style.borderColor = "#2d2d2a";
+  playerRockChoice.classList.remove("on");
+  playerPaperChoice.classList.remove("on");
+  playerScissorsChoice.classList.remove("on");
+  compRockChoice.classList.remove("on");
+  compPaperChoice.classList.remove("on");
+  compScissorsChoice.classList.remove("on");
+}
 
 // This function shows the choices of the player and computer
 function showChoice(playerSelection, computerSelection) {
